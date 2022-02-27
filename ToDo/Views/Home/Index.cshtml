@@ -1,0 +1,36 @@
+﻿
+@model ToDo.Models.ListTask
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<table>
+    <tr>
+        <h1>ToDo List</h1>
+    </tr>
+    <tr>
+        <td><p>Task Description</p></td>
+        <td><button>edit</button></td>
+        <td><button>complete</button></td>
+        <td><button>delete</button></td>
+        </td>
+    </tr>
+</table>
+
+
+<div id="form">
+
+    <!-- Can't get Ajax.BeginForm to work
+    //System.Web.Mvc.Ajax.AjaxExtensions.BeginForm(null, "CreateNewTask", "Home", new System.Web.Mvc.Ajax.AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divEmp" }
+    ))
+    -->
+    
+    @Html.TextBoxFor(m => m.Description)
+        <input type="submit" value="Add Task" class="btn btn-default" />
+        <button onclick="Create">Add Task</button>
+</div>
+
+
+
